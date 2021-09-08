@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         mainCam = Camera.main;
+
+        UIController.instance.SetCurrentGun(availableGuns[currentGun].GunUI, availableGuns[currentGun].weaponName);
     }
 
     // Update is called once per frame
@@ -93,6 +95,18 @@ public class PlayerController : MonoBehaviour
             //        Shoot();
             //    }
             //}
+
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                if (availableGuns.Count > 0)
+                {
+                    currentGun = (currentGun + 1) % availableGuns.Count;
+                    SwithGun();
+                } else
+                {
+                    Debug.LogError("Player has no guns!");
+                }
+            }
 
             if (Input.GetKeyDown(KeyCode.Space))
             {
@@ -147,4 +161,43 @@ public class PlayerController : MonoBehaviour
     //    Instantiate(bulletToFire, firePoint.position, firePoint.rotation);
     //    shotCounter = shotCycle;
     //}
+
+    private void takeOutGun()
+    {
+        availableGuns[currentGun].gameObject.SetActive(true);
+        UIController.instance.SetCurrentGun(availableGuns[currentGun].GunUI, availableGuns[currentGun].weaponName);
+    }
+
+
+    public void SwithGun()
+    {
+        foreach (Gun gun in availableGuns)
+        {
+            gun.gameObject.SetActive(false);
+        }
+        takeOutGun();
+    }
+
+    public void PickupGun(Gun pickupGun)
+    {
+        bool hasGun = false;
+        foreach(Gun gun in availableGuns)
+        {
+            if (gun.weaponName == pickupGun.weaponName)
+            {
+                hasGun = true;
+            }
+        }
+        if (!hasGun)
+        {
+            Gun gunClone = Instantiate(pickupGun);
+            gunClone.transform.parent = gunArm;
+            gunClone.transform.localPosition = Vector3.zero;
+            gunClone.transform.localRotation = Quaternion.Euler(Vector3.zero);
+            gunClone.transform.localScale = Vector3.one;
+            availableGuns.Add(gunClone);
+        }
+        currentGun = availableGuns.Count - 1;
+        SwithGun();
+    }
 }

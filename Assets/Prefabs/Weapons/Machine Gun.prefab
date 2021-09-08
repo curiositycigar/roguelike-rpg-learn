@@ -129,3 +129,6 @@ MonoBehaviour:
   bulletToFire: {fileID: 9073089322533014431, guid: 497a2714720ca444d865a3d0f9c55ff9, type: 3}
   firePoint: {fileID: 4853194980279409391}
   shotCycle: 0.2
+  weaponName: Machine
+  GunUI: {fileID: -2172343002418747524, guid: f72804754a2106a4884d758772ef2a02, type: 3}
+  SFX: 14

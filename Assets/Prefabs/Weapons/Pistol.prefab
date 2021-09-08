@@ -55,7 +55,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7243256632584833693}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -129,3 +129,6 @@ MonoBehaviour:
   bulletToFire: {fileID: 5062155177310481675, guid: 88392737503e04e67a58b55cea5f9e48, type: 3}
   firePoint: {fileID: 3704807704253371506}
   shotCycle: 0.75
+  weaponName: Pistol
+  GunUI: {fileID: 262978286505467586, guid: f72804754a2106a4884d758772ef2a02, type: 3}
+  SFX: 12

@@ -226,6 +226,8 @@ MonoBehaviour:
   dashInvincibility: 0.5
   dashCounter: 0
   canMove: 1
+  availableGuns:
+  - {fileID: 5399194386833327261}
 --- !u!58 &8708981805007054474
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -539,3 +541,14 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5267243119689903011, guid: f227e3670a7c843bc82e5663d7dbe40f, type: 3}
   m_PrefabInstance: {fileID: 1080638947257632635}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5399194386833327261 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4905257641305277414, guid: f227e3670a7c843bc82e5663d7dbe40f, type: 3}
+  m_PrefabInstance: {fileID: 1080638947257632635}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 562a3af84cada42908f3bc12cbbebfbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

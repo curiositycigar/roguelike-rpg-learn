@@ -15,6 +15,10 @@ public class UIController : MonoBehaviour
     [Header("@ Coin UI")]
     public Text coinText;
 
+    [Header("@ Gun UI")]
+    public Image currentGun;
+    public Text currentGunName;
+
     [Header("@ Fade Options")]
     public Image fadeScreen;
     public float fadeSpeed;
@@ -71,6 +75,13 @@ public class UIController : MonoBehaviour
         healthSlider.maxValue = max;
         healthSlider.value = current;
         healthText.text = current + " / " + max;
+    }
+
+    // 外部设置
+    public void SetCurrentGun(Sprite sprite, string name)
+    {
+        currentGun.sprite = sprite;
+        currentGunName.text = name;
     }
 
     public void setCoins(int count)

@@ -9,6 +9,10 @@ public class Gun : MonoBehaviour
     public float shotCycle;
     private float shotCounter;
 
+    public string weaponName;
+    public Sprite GunUI;
+    public int SFX;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,7 +40,7 @@ public class Gun : MonoBehaviour
 
     private void Shoot()
     {
-        AudioManager.instance.PlaySFX(12);
+        AudioManager.instance.PlaySFX(SFX);
         Instantiate(bulletToFire, firePoint.position, firePoint.rotation);
         shotCounter = shotCycle;
     }
