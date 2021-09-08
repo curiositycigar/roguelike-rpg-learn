@@ -162,20 +162,14 @@ public class PlayerController : MonoBehaviour
     //    shotCounter = shotCycle;
     //}
 
-    private void takeOutGun()
-    {
-        availableGuns[currentGun].gameObject.SetActive(true);
-        UIController.instance.SetCurrentGun(availableGuns[currentGun].GunUI, availableGuns[currentGun].weaponName);
-    }
-
-
     public void SwithGun()
     {
         foreach (Gun gun in availableGuns)
         {
             gun.gameObject.SetActive(false);
         }
-        takeOutGun();
+        availableGuns[currentGun].gameObject.SetActive(true);
+        UIController.instance.SetCurrentGun(availableGuns[currentGun].GunUI, availableGuns[currentGun].weaponName);
     }
 
     public void PickupGun(Gun pickupGun)
