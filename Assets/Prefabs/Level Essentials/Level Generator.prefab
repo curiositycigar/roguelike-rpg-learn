@@ -46,14 +46,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 0, g: 0.86100054, b: 1, a: 1}
   endColor: {r: 1, g: 0.36862782, b: 0, a: 1}
-  distanceToEnd: 10
-  generationPoint: {fileID: 8542075932746938586}
+  shopColor: {r: 0.956295, g: 1, b: 0, a: 1}
   selectDirection: 0
   xOffset: 18
   yOffset: 10
   whatIsRoom:
     serializedVersion: 2
     m_Bits: 8192
+  distanceToEnd: 10
+  generationPoint: {fileID: 8542075932746938586}
+  incldeShop: 1
+  minDistanceToShop: 3
+  maxDistanceToShop: 7
   layoutRoom: {fileID: 428619936546403330, guid: a6c0ed39cf9d7497aabc7aa06a28364e, type: 3}
   rooms:
     singleUp: {fileID: 7922195299072988774, guid: 2a99066f5610546fd8b69074344c7c70, type: 3}
@@ -73,9 +77,10 @@ MonoBehaviour:
     fourway: {fileID: 109084588889530706, guid: a29d69ad3349a47b9806ce3699c0f943, type: 3}
   roomCenterStart: {fileID: 47608358588480949, guid: 849118b4c508e453ea9cb8b1c4e1ce4c, type: 3}
   roomCenterEnd: {fileID: 3556301281485191632, guid: 8ad2184e237ff4a2d8412abd446e9a79, type: 3}
+  roomCenterShop: {fileID: 3681642681126187429, guid: 7a1dcf7b3a91c4903ac845f82546c58c, type: 3}
+  roomCenterGun: {fileID: 1836672878573871019, guid: cfb76a61b61ca4e558f13189b2302133, type: 3}
   potentialCenters:
-  - {fileID: 5946675701451929142, guid: 7384be62e3d0f402a8a51f641230b98e, type: 3}
-  - {fileID: 47608358588480949, guid: 849118b4c508e453ea9cb8b1c4e1ce4c, type: 3}
+  - {fileID: 7766602397779404010, guid: f261b4feb5b384b459feb26ce5249671, type: 3}
 --- !u!1 &8542075932746938587
 GameObject:
   m_ObjectHideFlags: 0

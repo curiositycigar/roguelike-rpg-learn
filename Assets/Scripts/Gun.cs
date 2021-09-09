@@ -13,6 +13,9 @@ public class Gun : MonoBehaviour
     public Sprite GunUI;
     public int SFX;
 
+    public int itemCost;
+    public Sprite gunShopSprite;
+
     // Start is called before the first frame update
     void Start()
     {

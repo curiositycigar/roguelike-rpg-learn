@@ -7,7 +7,7 @@ public class LevelGenerator : MonoBehaviour
 {
     [Header("@Debug Options")]
     public Color startColor;
-    public Color endColor, shopColor;
+    public Color endColor, shopColor, gunColor;
 
     public enum Direction
     {
@@ -31,16 +31,22 @@ public class LevelGenerator : MonoBehaviour
     private GameObject startRoom;
     private GameObject endRoom;
     private GameObject shopRoom;
+    private GameObject gunRoom;
 
     private List<GameObject> layoutRoomObjects = new List<GameObject>();
 
     private List<GameObject> generatedOutlines = new List<GameObject>();
 
+
+    [Header("@Gun")]
+    public int gunRoomPercentage = 50;
+    private bool hasGunRoom = false;
+
     [Header("@Room Prefabs")]
 
     public GameObject layoutRoom;
     public RoomPrefabs rooms;
-    public RoomCenter roomCenterStart, roomCenterEnd, roomCenerShop;
+    public RoomCenter roomCenterStart, roomCenterEnd, roomCenterShop, roomCenterGun;
     public RoomCenter[] potentialCenters;
 
     // Start is called before the first frame update
@@ -97,6 +103,19 @@ public class LevelGenerator : MonoBehaviour
 
             shopRoom.GetComponent<SpriteRenderer>().color = shopColor;
         }
+
+        hasGunRoom = gunRoomPercentage > Random.Range(0, 100);
+        if (hasGunRoom)
+        {
+            int gunSelect = Random.Range(distanceToEnd / 2, layoutRoomObjects.Count);
+
+            gunRoom = layoutRoomObjects[gunSelect];
+
+            layoutRoomObjects.RemoveAt(gunSelect);
+
+            gunRoom.GetComponent<SpriteRenderer>().color = gunColor;
+
+        }
     }
 
     // 初始化房间outline(wall)
@@ -112,6 +131,10 @@ public class LevelGenerator : MonoBehaviour
         if (incldeShop)
         {
             CreateRoomOutline(shopRoom);
+        }
+        if (hasGunRoom)
+        {
+            CreateRoomOutline(gunRoom);
         }
     }
 
@@ -130,7 +153,11 @@ public class LevelGenerator : MonoBehaviour
             }
             else if (incldeShop && outline.transform.position == shopRoom.transform.position)
             {
-                Instantiate(roomCenerShop, outline.transform.position, transform.rotation).theRoom = outline.GetComponent<Room>();
+                Instantiate(roomCenterShop, outline.transform.position, transform.rotation).theRoom = outline.GetComponent<Room>();
+            }
+            else if (hasGunRoom && outline.transform.position == gunRoom.transform.position)
+            {
+                Instantiate(roomCenterGun, outline.transform.position, transform.rotation).theRoom = outline.GetComponent<Room>();
             }
             else
             {
