@@ -1445,7 +1445,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &4185085678502537002
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1710,7 +1710,7 @@ MonoBehaviour:
   currentGunName: {fileID: 807957772}
   fadeScreen: {fileID: 4185085678502537001}
   fadeSpeed: 1
-  newGameScene: Test
+  newGameScene: Level 1
   mainMenuScene: Title Menu
   deathScreen: {fileID: 4185085679036533609}
   pauseMenu: {fileID: 1792836511}

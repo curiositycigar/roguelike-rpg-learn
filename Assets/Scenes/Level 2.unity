@@ -424,8 +424,20 @@ PrefabInstance:
       value: 0.04401779
       objectReference: {fileID: 0}
     - target: {fileID: 8542075932645712139, guid: 6b8631bd2697f49c3bc7181b13cd9c3c, type: 3}
+      propertyPath: distanceToEnd
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542075932645712139, guid: 6b8631bd2697f49c3bc7181b13cd9c3c, type: 3}
       propertyPath: gunRoomPercentage
-      value: 100
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542075932645712139, guid: 6b8631bd2697f49c3bc7181b13cd9c3c, type: 3}
+      propertyPath: maxDistanceToShop
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8542075932645712139, guid: 6b8631bd2697f49c3bc7181b13cd9c3c, type: 3}
+      propertyPath: minDistanceToShop
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6b8631bd2697f49c3bc7181b13cd9c3c, type: 3}
@@ -660,8 +672,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5960876929048919123, guid: fbae91f47c74141678b098747f0ec8ef, type: 3}
-      propertyPath: currentCoins
-      value: 100
+      propertyPath: nextLevel
+      value: Level 3
       objectReference: {fileID: 0}
     - target: {fileID: 5960876929048919135, guid: fbae91f47c74141678b098747f0ec8ef, type: 3}
       propertyPath: m_Name

@@ -25,6 +25,8 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        currentCoins = CharacterTracker.instance.currentCoins;
+
         Time.timeScale = 1;
         UIController.instance.setCoins(currentCoins);
     }
@@ -47,6 +49,11 @@ public class LevelManager : MonoBehaviour
         UIController.instance.StartFadeToBlack();
 
         yield return new WaitForSeconds(waitToLoad);
+
+        // 离开场景时记录玩家数据
+        CharacterTracker.instance.currentCoins = currentCoins;
+        CharacterTracker.instance.currentHealth = PlayerHealthController.instance.currentHealth;
+        CharacterTracker.instance.maxHealth = PlayerHealthController.instance.maxHealth;
 
         SceneManager.LoadScene(nextLevel);
     }

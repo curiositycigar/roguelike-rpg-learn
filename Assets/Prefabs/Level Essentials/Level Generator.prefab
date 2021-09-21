@@ -47,6 +47,7 @@ MonoBehaviour:
   startColor: {r: 0, g: 0.86100054, b: 1, a: 1}
   endColor: {r: 1, g: 0.36862782, b: 0, a: 1}
   shopColor: {r: 0.956295, g: 1, b: 0, a: 1}
+  gunColor: {r: 0.04401779, g: 0, b: 1, a: 0}
   selectDirection: 0
   xOffset: 18
   yOffset: 10
@@ -58,6 +59,7 @@ MonoBehaviour:
   incldeShop: 1
   minDistanceToShop: 3
   maxDistanceToShop: 7
+  gunRoomPercentage: 100
   layoutRoom: {fileID: 428619936546403330, guid: a6c0ed39cf9d7497aabc7aa06a28364e, type: 3}
   rooms:
     singleUp: {fileID: 7922195299072988774, guid: 2a99066f5610546fd8b69074344c7c70, type: 3}

@@ -22,7 +22,10 @@ public class PlayerHealthController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = Mathf.Min(currentHealth, maxHealth);
+        maxHealth = CharacterTracker.instance.maxHealth;
+        currentHealth = CharacterTracker.instance.currentHealth;
+
+        //currentHealth = Mathf.Min(currentHealth, maxHealth);
 
         player = PlayerController.instance;
 

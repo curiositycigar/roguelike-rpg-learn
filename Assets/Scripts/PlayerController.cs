@@ -37,13 +37,15 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         instance = this;
-        activeMoveSpeed = moveSpeed;
+
+        //DontDestroyOnLoad(gameObject);
     }
 
     // Start is called before the first frame update
     void Start()
     {
         mainCam = Camera.main;
+        activeMoveSpeed = moveSpeed;
 
         UIController.instance.SetCurrentGun(availableGuns[currentGun].GunUI, availableGuns[currentGun].weaponName);
     }
