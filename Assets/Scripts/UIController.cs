@@ -44,6 +44,9 @@ public class UIController : MonoBehaviour
     {
         fadeOutBlack = true;
         fadeToBlack = false;
+
+        Gun currentGun = PlayerController.instance.currentGun;
+        SetCurrentGun(currentGun.GunUI, currentGun.weaponName);
     }
 
     // Update is called once per frame

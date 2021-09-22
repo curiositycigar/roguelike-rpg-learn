@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     //public float shotCycle;
     //private float shotCounter;
 
-    private Camera mainCam;
+    //private Camera mainCam;
     private Vector2 moveInput;
 
 
@@ -32,22 +32,24 @@ public class PlayerController : MonoBehaviour
     public bool canMove = true;
 
     public List<Gun> availableGuns = new List<Gun>();
-    private int currentGun;
+    private int currentGunIndex;
+
+    [HideInInspector]
+    public Gun currentGun {
+        get { return availableGuns[currentGunIndex]; }
+    }
 
     private void Awake()
     {
         instance = this;
 
-        //DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        mainCam = Camera.main;
         activeMoveSpeed = moveSpeed;
-
-        UIController.instance.SetCurrentGun(availableGuns[currentGun].GunUI, availableGuns[currentGun].weaponName);
     }
 
     // Update is called once per frame
@@ -65,7 +67,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = moveInput * activeMoveSpeed;
 
             Vector3 mousePosition = Input.mousePosition;
-            Vector3 screenPosition = mainCam.WorldToScreenPoint(transform.position);
+            Vector3 screenPosition = CameraController.instance.mainCamera.WorldToScreenPoint(transform.position);
 
             if (mousePosition.x > screenPosition.x)
             {
@@ -102,7 +104,7 @@ public class PlayerController : MonoBehaviour
             {
                 if (availableGuns.Count > 0)
                 {
-                    currentGun = (currentGun + 1) % availableGuns.Count;
+                    currentGunIndex = (currentGunIndex + 1) % availableGuns.Count;
                     SwithGun();
                 } else
                 {
@@ -170,8 +172,8 @@ public class PlayerController : MonoBehaviour
         {
             gun.gameObject.SetActive(false);
         }
-        availableGuns[currentGun].gameObject.SetActive(true);
-        UIController.instance.SetCurrentGun(availableGuns[currentGun].GunUI, availableGuns[currentGun].weaponName);
+        availableGuns[currentGunIndex].gameObject.SetActive(true);
+        UIController.instance.SetCurrentGun(availableGuns[currentGunIndex].GunUI, availableGuns[currentGunIndex].weaponName);
     }
 
     public void PickupGun(Gun pickupGun)
@@ -193,7 +195,7 @@ public class PlayerController : MonoBehaviour
             gunClone.transform.localScale = Vector3.one;
             availableGuns.Add(gunClone);
         }
-        currentGun = availableGuns.Count - 1;
+        currentGunIndex = availableGuns.Count - 1;
         SwithGun();
     }
 }
