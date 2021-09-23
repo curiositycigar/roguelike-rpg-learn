@@ -27,7 +27,7 @@ public class LevelManager : MonoBehaviour
     void Start()
     {
         PlayerController.instance.transform.position = startPoint.position;
-        PlayerController.instance.canMove = false;
+        PlayerController.instance.canMove = true;
 
         currentCoins = CharacterTracker.instance.currentCoins;
 
