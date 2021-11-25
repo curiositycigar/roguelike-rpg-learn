@@ -371,6 +371,10 @@ PrefabInstance:
       value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8542075932645712139, guid: 6b8631bd2697f49c3bc7181b13cd9c3c, type: 3}
+      propertyPath: roomCenterEnd
+      value: 
+      objectReference: {fileID: 1219881019586077377, guid: c8940fd909e8940ef9f4cf173fd3dce1, type: 3}
+    - target: {fileID: 8542075932645712139, guid: 6b8631bd2697f49c3bc7181b13cd9c3c, type: 3}
       propertyPath: gunRoomPercentage
       value: 80
       objectReference: {fileID: 0}
