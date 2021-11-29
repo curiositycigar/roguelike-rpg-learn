@@ -7,6 +7,10 @@ public class MainMenu : MonoBehaviour
 {
     public string levelToLoad;
 
+    public GameObject deletePannel;
+
+    public PlayerSelector[] playerSelectors;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,5 +31,24 @@ public class MainMenu : MonoBehaviour
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    public void DeleteSave()
+    {
+        deletePannel.SetActive(true);
+    }
+
+    public void ConfirmDelete()
+    {
+        deletePannel.SetActive(false);
+        foreach(PlayerSelector playerSelector in playerSelectors)
+        {
+            PlayerPrefs.SetInt(playerSelector.playerToSpawn.name, 0);
+        }
+    }
+
+    public void CancelDelete()
+    {
+        deletePannel.SetActive(false);
     }
 }

@@ -8,12 +8,24 @@ public class PlayerSelector : MonoBehaviour
 
     public GameObject message;
 
-    public PlayerController playerToSpawn; 
+    public PlayerController playerToSpawn;
+
+    public bool shouldUnlock;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (shouldUnlock)
+        {
+            if (PlayerPrefs.GetInt(playerToSpawn.name) == 1)
+            {
+                gameObject.SetActive(true);
+            }
+            else
+            {
+                gameObject.SetActive(false);
+            }
+        }
     }
 
     // Update is called once per frame

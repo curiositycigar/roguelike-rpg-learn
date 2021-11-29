@@ -102,12 +102,14 @@ public class UIController : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(newGameScene);
+        Destroy(PlayerController.instance.gameObject);
     }
 
     public void MainMenu()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(mainMenuScene);
+        Destroy(PlayerController.instance.gameObject);
     }
 
     public void Resume()

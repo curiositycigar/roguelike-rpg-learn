@@ -69,11 +69,11 @@ PrefabInstance:
       objectReference: {fileID: 3542127132570728493, guid: a47294d8f066c634d90ee371916313ff, type: 3}
     - target: {fileID: 8129271368650910507, guid: 5c272718c1a064ecc9f49efbf4d83087, type: 3}
       propertyPath: m_Name
-      value: Player Select - Sneaker
+      value: Player Select - Sneaker Variant
       objectReference: {fileID: 0}
     - target: {fileID: 8129271368650910507, guid: 5c272718c1a064ecc9f49efbf4d83087, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c272718c1a064ecc9f49efbf4d83087, type: 3}
