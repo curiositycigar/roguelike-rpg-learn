@@ -456,7 +456,7 @@ MonoBehaviour:
   - actionLength: 2
     shouldMove: 1
     shouldChasePlayer: 1
-    speed: 3.4
+    moveSpeed: 3.5
     moveToPoint: 0
     pointMoveTo: {fileID: 0}
     shouleShoot: 0
@@ -465,10 +465,10 @@ MonoBehaviour:
     shotPoints: []
   - actionLength: 2
     shouldMove: 0
-    shouldChasePlayer: 1
-    speed: 3.4
+    shouldChasePlayer: 0
+    moveSpeed: 3.5
     moveToPoint: 0
-    pointMoveTo: {fileID: 0}
+    pointMoveTo: {fileID: 1825357811}
     shouleShoot: 1
     itemToShoot: {fileID: 4545912564703361903, guid: 7c46f809fda0b41c8841e6c8c17186de, type: 3}
     timeBetweenShots: 0.5
@@ -477,6 +477,7 @@ MonoBehaviour:
     - {fileID: 21916268}
     - {fileID: 1877414888}
     - {fileID: 29536858}
+  theRB: {fileID: 252524886}
 --- !u!1001 &296501380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7906,6 +7907,10 @@ PrefabInstance:
     - target: {fileID: 4545912564703361903, guid: 7c46f809fda0b41c8841e6c8c17186de, type: 3}
       propertyPath: m_Name
       value: Boss Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 4545912564703361903, guid: 7c46f809fda0b41c8841e6c8c17186de, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4545912564703361906, guid: 7c46f809fda0b41c8841e6c8c17186de, type: 3}
       propertyPath: m_RootOrder
