@@ -17,8 +17,9 @@ public class BossController : MonoBehaviour
 
     public int currentHealth;
 
-    //public GameObject deadEffect;
-    //public GameObject levelExit;
+    public GameObject deadEffect;
+    public GameObject hitEffect; // 没有用到
+    public GameObject levelExit;
 
 
     private void Awake()
@@ -30,6 +31,10 @@ public class BossController : MonoBehaviour
     void Start()
     {
         actionCounter = actions[currentAction].actionLength;
+
+        UIController.instance.bossHealthBar.gameObject.SetActive(true);
+        UIController.instance.bossHealthBar.maxValue = currentHealth;
+        UIController.instance.bossHealthBar.value = currentHealth;
     }
 
     // Update is called once per frame
@@ -92,7 +97,19 @@ public class BossController : MonoBehaviour
         {
             currentHealth = 0;
             gameObject.SetActive(false);
+
+            Instantiate(deadEffect, transform.position, transform.rotation);
+
+            if (Vector2.Distance(PlayerController.instance.transform.position, levelExit.transform.position) > 2f)
+            {
+                levelExit.transform.position += new Vector3(4f, 0f, 0f);
+            }
+
+            levelExit.SetActive(true);
+
+            UIController.instance.bossHealthBar.gameObject.SetActive(false);
         }
+        UIController.instance.bossHealthBar.value = currentHealth;
     }
 }
 

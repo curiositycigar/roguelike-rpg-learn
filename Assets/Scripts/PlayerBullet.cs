@@ -32,6 +32,9 @@ public class PlayerBullet : MonoBehaviour
         if (other.tag == "Enemy")
         {
             other.GetComponent<EnemyController>().DamageEnemy(damage);
+        } else if (other.tag == "Boss")
+        {
+            BossController.instance.TakeDamage(damage);
         }
     }
 

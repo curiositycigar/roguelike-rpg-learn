@@ -34,6 +34,9 @@ public class UIController : MonoBehaviour
 
     public GameObject mapDisplay;
 
+    [Header("@ Boss")]
+    public Slider bossHealthBar;
+
     private void Awake()
     {
         instance = this;
