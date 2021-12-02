@@ -12,8 +12,6 @@ public class PlayerHealthController : MonoBehaviour
     public float damageInvincLength = 1f;
     private float invincCount;
 
-    private PlayerController player;
-
     private void Awake()
     {
         instance = this;
@@ -26,8 +24,6 @@ public class PlayerHealthController : MonoBehaviour
         currentHealth = CharacterTracker.instance.currentHealth;
 
         //currentHealth = Mathf.Min(currentHealth, maxHealth);
-
-        player = PlayerController.instance;
 
         UIController.instance.SetHealth(maxHealth, currentHealth);
     }
@@ -58,7 +54,7 @@ public class PlayerHealthController : MonoBehaviour
 
             if (currentHealth <= 0)
             {
-                player.gameObject.SetActive(false);
+                PlayerController.instance.gameObject.SetActive(false);
                 UIController.instance.deathScreen.SetActive(true);
 
                 AudioManager.instance.PlaySFX(10);
@@ -71,8 +67,8 @@ public class PlayerHealthController : MonoBehaviour
 
     void setPlayerAlpha(float r)
     {
-        Color defaultColor = player.bodySR.color;
-        player.bodySR.color = new Color(defaultColor.r, defaultColor.g, defaultColor.b, r);
+        Color defaultColor = PlayerController.instance.bodySR.color;
+        PlayerController.instance.bodySR.color = new Color(defaultColor.r, defaultColor.g, defaultColor.b, r);
     }
 
     public void setPlayerInvincible(float t)

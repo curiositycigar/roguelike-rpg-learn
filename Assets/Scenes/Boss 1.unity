@@ -321,52 +321,6 @@ Transform:
   m_Father: {fileID: 709397342}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &158177638
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 158177640}
-  - component: {fileID: 158177639}
-  m_Layer: 0
-  m_Name: Character Tracker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &158177639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158177638}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5a77c4c0b70a14a1487e5e8962d8b04b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentHealth: 5
-  maxHealth: 5
-  currentCoins: 0
---- !u!4 &158177640
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 158177638}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.9540977, y: -3.5885704, z: -0.33614886}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &252524884
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,10 +432,96 @@ MonoBehaviour:
     - {fileID: 1877414888}
     - {fileID: 29536858}
   theRB: {fileID: 252524886}
-  currentHealth: 200
+  currentHealth: 500
   deadEffect: {fileID: 901936474327845936, guid: e847c7ba7ca9c44c6b301ca7d4ad2e6d, type: 3}
   hitEffect: {fileID: 7708284681207121128, guid: 6445a84f9644a49bcb7f6dd08fb2eda5, type: 3}
   levelExit: {fileID: 1836014868}
+  sequences:
+  - actions:
+    - actionLength: 2
+      shouldMove: 1
+      shouldChasePlayer: 1
+      moveSpeed: 3.5
+      moveToPoint: 0
+      pointMoveTo: {fileID: 0}
+      shouleShoot: 0
+      itemToShoot: {fileID: 0}
+      timeBetweenShots: 0
+      shotPoints: []
+    - actionLength: 2
+      shouldMove: 0
+      shouldChasePlayer: 0
+      moveSpeed: 3.5
+      moveToPoint: 0
+      pointMoveTo: {fileID: 1825357811}
+      shouleShoot: 1
+      itemToShoot: {fileID: 4545912564703361903, guid: 7c46f809fda0b41c8841e6c8c17186de, type: 3}
+      timeBetweenShots: 0.5
+      shotPoints:
+      - {fileID: 1855673544}
+      - {fileID: 21916268}
+      - {fileID: 1877414888}
+      - {fileID: 29536858}
+    endSequenceHealth: 250
+  - actions:
+    - actionLength: 5
+      shouldMove: 1
+      shouldChasePlayer: 0
+      moveSpeed: 4
+      moveToPoint: 1
+      pointMoveTo: {fileID: 1825357811}
+      shouleShoot: 1
+      itemToShoot: {fileID: 4545912564703361903, guid: 7c46f809fda0b41c8841e6c8c17186de, type: 3}
+      timeBetweenShots: 0.5
+      shotPoints:
+      - {fileID: 1855673544}
+      - {fileID: 21916268}
+      - {fileID: 1877414888}
+      - {fileID: 29536858}
+    - actionLength: 5
+      shouldMove: 1
+      shouldChasePlayer: 0
+      moveSpeed: 4
+      moveToPoint: 1
+      pointMoveTo: {fileID: 1637541119}
+      shouleShoot: 1
+      itemToShoot: {fileID: 4545912564703361903, guid: 7c46f809fda0b41c8841e6c8c17186de, type: 3}
+      timeBetweenShots: 0.5
+      shotPoints:
+      - {fileID: 1855673544}
+      - {fileID: 21916268}
+      - {fileID: 1877414888}
+      - {fileID: 29536858}
+    - actionLength: 5
+      shouldMove: 1
+      shouldChasePlayer: 0
+      moveSpeed: 4
+      moveToPoint: 1
+      pointMoveTo: {fileID: 1081427495}
+      shouleShoot: 1
+      itemToShoot: {fileID: 4545912564703361903, guid: 7c46f809fda0b41c8841e6c8c17186de, type: 3}
+      timeBetweenShots: 0.5
+      shotPoints:
+      - {fileID: 1855673544}
+      - {fileID: 21916268}
+      - {fileID: 1877414888}
+      - {fileID: 29536858}
+    - actionLength: 5
+      shouldMove: 1
+      shouldChasePlayer: 0
+      moveSpeed: 4
+      moveToPoint: 1
+      pointMoveTo: {fileID: 1916743962}
+      shouleShoot: 1
+      itemToShoot: {fileID: 4545912564703361903, guid: 7c46f809fda0b41c8841e6c8c17186de, type: 3}
+      timeBetweenShots: 0.5
+      shotPoints:
+      - {fileID: 1855673544}
+      - {fileID: 21916268}
+      - {fileID: 1877414888}
+      - {fileID: 29536858}
+    endSequenceHealth: 0
+  currenSequenceIndex: 0
 --- !u!1001 &296501380
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -539,7 +579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8708981805007054485, guid: dcb38aa2939a94f059c2590efae94713, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dcb38aa2939a94f059c2590efae94713, type: 3}
@@ -710,7 +750,7 @@ Transform:
   - {fileID: 252524885}
   - {fileID: 92567134}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &713893926
 GameObject:
@@ -878,7 +918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1081427495}
   m_Layer: 0
-  m_Name: Point (2)
+  m_Name: MPoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1014,7 +1054,7 @@ Transform:
   m_Children:
   - {fileID: 1469519910}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1469519909
 GameObject:
@@ -7462,7 +7502,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1637541119}
   m_Layer: 0
-  m_Name: Point (1)
+  m_Name: MPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7492,7 +7532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1825357811}
   m_Layer: 0
-  m_Name: Point
+  m_Name: MPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7752,7 +7792,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1916743962}
   m_Layer: 0
-  m_Name: Point (3)
+  m_Name: MPoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7875,7 +7915,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4185085678502537003, guid: 86ae65e2b9856419896d5b27bbcec9ab, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4185085679019053146, guid: 86ae65e2b9856419896d5b27bbcec9ab, type: 3}
       propertyPath: m_Pivot.x
@@ -7992,7 +8032,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4545912564703361906, guid: 7c46f809fda0b41c8841e6c8c17186de, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4545912564703361906, guid: 7c46f809fda0b41c8841e6c8c17186de, type: 3}
       propertyPath: m_LocalPosition.x

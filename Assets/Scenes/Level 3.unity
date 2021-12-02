@@ -166,6 +166,7 @@ MonoBehaviour:
   bigMapCamera: {fileID: 1257487776}
   moveSpeed: 30
   target: {fileID: 0}
+  isBossRoom: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -616,7 +617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5960876929048919123, guid: fbae91f47c74141678b098747f0ec8ef, type: 3}
       propertyPath: nextLevel
-      value: Victory
+      value: Boss 1
       objectReference: {fileID: 0}
     - target: {fileID: 5960876929048919135, guid: fbae91f47c74141678b098747f0ec8ef, type: 3}
       propertyPath: m_Name
